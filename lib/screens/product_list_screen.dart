@@ -48,10 +48,11 @@ class ProductListView extends StatelessWidget {
         return Padding(
           padding: EdgeInsets.symmetric(horizontal: targetPadding / 2),
           child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 8,
-                // childAspectRatio: MediaQuery.of(context).size.aspectRatio,
+                // childAspectRatio:
+                childAspectRatio: MediaQuery.of(context).size.aspectRatio,
               ),
               itemCount: Provider.of<ProductState>(context).productList.length,
               itemBuilder: (context, index) {
@@ -160,7 +161,7 @@ class ProductListView extends StatelessWidget {
                                 ],
                               ),
                               const SizedBox(
-                                height: 5,
+                                height: 10,
                               ),
                             ],
                           ),
